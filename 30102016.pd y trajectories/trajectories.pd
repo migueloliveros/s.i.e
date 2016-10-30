@@ -1,0 +1,5 @@
+[read /Users/bpm/Desktop/trajectories.txt(
+|
+[s array_name]
+
+#X msg 105 76 read orders2.txt;

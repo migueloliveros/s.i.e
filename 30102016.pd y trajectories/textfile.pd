@@ -1,0 +1,12 @@
+#N canvas 0 22 450 300 10;
+#X obj 61 177 textfile;
+#X msg 58 44 read trajectories.txt;
+#X msg 189 94 rewind;
+#X msg 209 129 bang;
+#X obj 79 227 print a;
+#X obj 200 209 print b;
+#X connect 0 0 4 0;
+#X connect 0 1 5 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;

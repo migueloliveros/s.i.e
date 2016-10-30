@@ -1,0 +1,12 @@
+#N canvas 817 145 450 300 10;
+#X msg 105 76 read orders.txt;
+#X msg 161 108 bang;
+#X obj 173 160 qlist;
+#X obj 111 203 r tom;
+#X obj 159 200 r imi;
+#X floatatom 114 230 5 0 0 0 - - -;
+#X floatatom 162 233 5 0 0 0 - - -;
+#X connect 0 0 2 0;
+#X connect 1 0 2 0;
+#X connect 3 0 5 0;
+#X connect 4 0 6 0;
