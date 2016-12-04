@@ -1,4 +1,4 @@
-#N canvas 0 9 1366 686 10;
+#N canvas 0 9 1362 686 10;
 #N canvas 876 177 375 255 startup 0;
 #X obj 22 24 loadbang;
 #X obj 22 48 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
@@ -11,7 +11,7 @@
 #X connect 1 0 2 0;
 #X connect 2 0 5 0;
 #X restore 233 -395 pd startup;
-#N canvas 0 7 1366 686 swarzschild0 1;
+#N canvas 0 7 1362 686 swarzschild0 0;
 #X floatatom 276 15 8 0 0 0 - - -;
 #X floatatom 470 13 8 0 0 0 - - -;
 #X obj 266 -50 r x;
@@ -49,7 +49,7 @@ abs($f4)/$f5 \;;
 #X floatatom 642 219 8 0 0 0 - - -;
 #X floatatom 484 398 8 0 0 0 - - -;
 #X obj 539 468 hsl 128 15 0 15 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 6600 1;
 #X obj 174 222 qlist;
 #X msg 71 130 rewind;
 #X msg 78 183 next;
@@ -65,7 +65,7 @@ abs($f4)/$f5 \;;
 #X msg 1129 -77 destroy \, 0;
 #X floatatom 530 12 8 0 0 0 - - -;
 #X floatatom 337 14 8 0 0 0 - - -;
-#N canvas 0 23 621 613 agujero 1;
+#N canvas 556 0 621 613 agujero 1;
 #X floatatom 88 89 5 0 0 0 - - -;
 #X msg 64 171 draw line;
 #X msg 73 193 draw fill;
@@ -106,7 +106,7 @@ abs($f4)/$f5 \;;
 #X floatatom 617 320 5 0 0 0 - - -;
 #X floatatom 564 320 5 0 0 0 - - -;
 #X msg 363 330 draw point;
-#X floatatom 591 416 5 0 0 0 - - -;
+#X floatatom 591 418 5 0 0 0 - - -;
 #X floatatom 659 319 5 0 0 0 - - -;
 #X obj 484 451 gemhead;
 #X floatatom 593 529 5 0 0 0 - - -;
@@ -128,9 +128,9 @@ abs($f4)/$f5 \;;
 #X obj 939 -42 gemhead;
 #X obj 922 -5 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
 ;
-#X obj 945 -24 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+#X obj 945 -24 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
 1;
-#X obj 994 21 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+#X obj 994 21 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
 ;
 #X obj 1020 -1 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
 1;
@@ -138,7 +138,7 @@ abs($f4)/$f5 \;;
 #X msg 1020 15 right \$1;
 #X obj 835 33 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
 ;
-#X obj 861 11 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+#X obj 861 11 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
 ;
 #X msg 861 27 up \$1;
 #X msg 835 49 down \$1;
@@ -155,6 +155,11 @@ abs($f4)/$f5 \;;
 #X floatatom 1139 120 5 0 0 0 - - -;
 #X floatatom 1139 83 5 0 0 0 - - -;
 #X msg 827 126 distance \$1;
+#X obj 666 508 random 127;
+#X obj 718 376 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 662 415 random 300;
+#X obj 718 396 metro 60;
 #X connect 0 0 16 1;
 #X connect 1 0 15 0;
 #X connect 2 0 15 0;
@@ -231,6 +236,11 @@ abs($f4)/$f5 \;;
 #X connect 78 0 76 0;
 #X connect 79 0 75 0;
 #X connect 80 0 56 0;
+#X connect 81 0 44 0;
+#X connect 82 0 84 0;
+#X connect 83 0 38 0;
+#X connect 84 0 81 0;
+#X connect 84 0 83 0;
 #X restore 986 -41 pd agujero;
 #N canvas 635 8 680 478 particulas 0;
 #X obj 69 50 inlet;
@@ -287,7 +297,7 @@ abs($f4)/$f5 \;;
 #X obj 116 288 expr 450*$f1;
 #X msg 1224 -15 lighting \$1;
 #X obj 1233 -45 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-1 1;
+0 1;
 #X obj 131 -89 random 251;
 #X obj 248 14 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -372,7 +382,7 @@ abs($f4)/$f5 \;;
 #X obj 191 788 dac~ 1 2 3 4;
 #X obj 269 193 metro;
 #X floatatom 304 166 5 0 0 0 - - -;
-#X obj 269 166 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+#X obj 269 166 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
 1;
 #X obj 308 235 del;
 #X obj 154 357 line~;
@@ -405,7 +415,7 @@ abs($f4)/$f5 \;;
 #X text 546 373 creates back and forth movement;
 #X text 547 395 between 0 and 1;
 #X obj 286 128 hsl 128 30 0 2000 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 11678 1;
+-1 -1 4204 1;
 #X obj 444 194 / 2;
 #X obj 327 205 / 4;
 #X obj 486 435 +~ 2;
@@ -661,7 +671,7 @@ abs($f4)/$f5 \;;
 #X obj -257 189 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg -330 253 freeze \$1;
-#X obj -330 234 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+#X obj -330 234 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
 1;
 #X msg -257 254 freeze \$1;
 #X obj -257 235 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
@@ -690,7 +700,7 @@ abs($f4)/$f5 \;;
 #X obj -166 191 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg -166 256 freeze \$1;
-#X obj -166 237 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+#X obj -166 237 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
 1;
 #X obj -166 213 metro 1000;
 #X obj -158 115 metro 5000;
@@ -698,7 +708,7 @@ abs($f4)/$f5 \;;
 #X obj 60 91 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X msg 60 156 freeze \$1;
-#X obj 60 137 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+#X obj 60 137 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
 ;
 #X obj 52 189 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -709,12 +719,12 @@ abs($f4)/$f5 \;;
 #X obj -10 93 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X msg -10 158 freeze \$1;
-#X obj -10 139 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+#X obj -10 139 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
 1;
 #X obj -18 191 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg -18 256 freeze \$1;
-#X obj -18 237 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+#X obj -18 237 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
 1;
 #X obj -18 213 metro 1000;
 #X obj -10 115 metro 6000;

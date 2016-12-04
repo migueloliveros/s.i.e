@@ -64,13 +64,13 @@ abs($f4)/$f5 \;;
 #X obj 958 544 *~;
 #N canvas 0 22 796 453 (subpatch) 0;
 #X array array1 100 float 3;
-#A 0 -0.000152593 -0.000152593 0 0 0 0 0 -0.000152593 0 0 -0.000152593
-0 0 0 0 0 0.000152593 0 0 0 0 0 0 0 0 0 -0.000152593 -0.000152593 0
-0.000152593 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.000152593 0 0
-0 -0.000152593 -0.000152593 -0.000152593 -0.000152593 0 0 0 0 0 0 0
-0 0 0 0 -0.000152593 0 0 0 0 0 0 0.000152593 0 0.000152593 0 0.000152593
-0 0 0.000152593 0 0 0.000152593 0 0.000152593 0 -0.000152593 0 0 0
-0 0 0.000152593 0.000152593 0 -0.000152593 0;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.000152593 0 0 0 0 0 0.000152593 0
+0.000152593 0 0.000152593 0 -0.000152593 0.000152593 0 -0.000152593
+0 0.000152593 -0.000152593 -0.000152593 0 0 0 0 0 0.000152593 0 0 0
+0 0 -0.000152593 0 0 0 0.000152593 0 0.000152593 0 0.000152593 0 0.000152593
+0.000152593 0.000152593 0 0 0 0 0 0 0 0 0 0 0 0 0 0.000152593 0 0 0
+0 0 0 0 0 0 0 -0.000152593 0 -0.000152593 0 0 0 0 -0.000152593 0 0
+-0.000152593 0 0 0 -0.000152593 0 -0.000152593 0 0;
 #X coords 0 1 99 -1 200 140 1;
 #X restore 1080 358 graph;
 #X obj 972 447 tabwrite~ array1;
@@ -79,7 +79,6 @@ abs($f4)/$f5 \;;
 #X text 1038 425 msec.;
 #X obj 972 426 metro 160;
 #X obj 947 374 *~ 5;
-#X obj 898 326 adc~ 1;
 #X obj 257 460 freeverb~;
 #X msg -53 27 roomsize \$1;
 #X msg -53 72 damping \$1;
@@ -108,6 +107,7 @@ abs($f4)/$f5 \;;
 #X floatatom -71 98 3 0 0 0 - - -;
 #X floatatom -71 141 3 0 0 0 - - -;
 #X floatatom -71 185 3 0 0 0 - - -;
+#X obj 898 326 adc~ 1 2 3 4;
 #X connect 0 0 14 0;
 #X connect 1 0 14 1;
 #X connect 2 0 0 0;
@@ -156,8 +156,8 @@ abs($f4)/$f5 \;;
 #X connect 33 2 17 0;
 #X connect 33 3 16 0;
 #X connect 34 0 33 4;
-#X connect 35 0 62 0;
-#X connect 35 0 62 1;
+#X connect 35 0 61 0;
+#X connect 35 0 61 1;
 #X connect 36 0 32 4;
 #X connect 37 0 36 0;
 #X connect 38 0 35 1;
@@ -181,32 +181,32 @@ abs($f4)/$f5 \;;
 #X connect 57 0 59 0;
 #X connect 59 0 56 0;
 #X connect 60 0 56 0;
-#X connect 61 0 51 0;
-#X connect 61 0 52 0;
-#X connect 61 0 53 0;
-#X connect 61 0 54 0;
-#X connect 61 0 60 0;
-#X connect 62 0 19 0;
-#X connect 62 0 20 0;
-#X connect 62 0 21 0;
-#X connect 62 0 22 0;
-#X connect 63 0 62 0;
-#X connect 64 0 62 0;
-#X connect 65 0 62 0;
-#X connect 66 0 62 0;
-#X connect 67 0 62 0;
-#X connect 68 0 62 0;
-#X connect 69 0 62 0;
-#X connect 70 0 62 0;
-#X connect 71 0 70 0;
-#X connect 72 0 69 0;
-#X connect 73 0 67 0;
-#X connect 73 0 82 0;
-#X connect 74 0 66 0;
-#X connect 74 0 81 0;
-#X connect 75 0 65 0;
-#X connect 75 0 80 0;
-#X connect 76 0 64 0;
-#X connect 76 0 79 0;
-#X connect 77 0 63 0;
-#X connect 77 0 78 0;
+#X connect 61 0 19 0;
+#X connect 61 0 20 0;
+#X connect 61 0 21 0;
+#X connect 61 0 22 0;
+#X connect 62 0 61 0;
+#X connect 63 0 61 0;
+#X connect 64 0 61 0;
+#X connect 65 0 61 0;
+#X connect 66 0 61 0;
+#X connect 67 0 61 0;
+#X connect 68 0 61 0;
+#X connect 69 0 61 0;
+#X connect 70 0 69 0;
+#X connect 71 0 68 0;
+#X connect 72 0 66 0;
+#X connect 72 0 81 0;
+#X connect 73 0 65 0;
+#X connect 73 0 80 0;
+#X connect 74 0 64 0;
+#X connect 74 0 79 0;
+#X connect 75 0 63 0;
+#X connect 75 0 78 0;
+#X connect 76 0 62 0;
+#X connect 76 0 77 0;
+#X connect 82 0 51 0;
+#X connect 82 0 52 0;
+#X connect 82 0 53 0;
+#X connect 82 0 54 0;
+#X connect 82 0 60 0;
